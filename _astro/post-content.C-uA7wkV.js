@@ -1,0 +1,3 @@
+function e(e,t=`https://cocokim1.github.io/`){try{let n=new URL(String(e).trim(),t);if(n.protocol===`https:`||n.protocol===`http:`&&[`localhost`,`127.0.0.1`].includes(n.hostname))return n.href}catch{}return null}function t(t){return String(t).trim().split(/\n{2,}/).map(e=>e.trim()).filter(Boolean).map(t=>{let n=t.match(/^!\[(.*?)\]\((.*?)\)$/s);if(n){let t=e(n[2]);if(t)return{type:`image`,alt:n[1].trim(),url:t}}return{type:`paragraph`,text:t}})}function n(e,t,n,r,i){let a=String(e).slice(0,t).trimEnd(),o=String(e).slice(n).trimStart();return[a,`![${String(r).replace(/[\[\]]/g,``).trim()}](${i})`,o].filter(Boolean).join(`
+
+`)}export{t as n,n as t};
